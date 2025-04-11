@@ -1,9 +1,19 @@
-# ReSpec Ecosystem
+# GeneWiki Ecosystem
 
-- [respec.org](https://github.com/marcoscaceres/respec.org): ReSpec's website and Web APIs.
-  - [respec-xref-route](https://github.com/sidvishnoi/respec-xref-route): Keyword based search API over CSSWG's Shepherd data. Backend for [`xref`](xref).
-  - [respec-caniuse-route](https://github.com/sidvishnoi/respec-caniuse-route): Backend for [`caniuse`](caniuse) feature.
-  - [respec-github-apis](https://github.com/sidvishnoi/respec-github-apis): Handler for various GitHub based things, like [GitHub Issues](issue), [Contributors](gh-contributors), [Changelog](rs-changelog), [`wpt-tests-exist`](wpt-tests-exist)
-- [respec-w3c-auto-publish](https://github.com/w3c/respec-w3c-auto-publish): GitHub action to validate a ReSpec document and publish it using Echidna.
-- [respec-validator](https://github.com/marcoscaceres/respec-validator): Validates ReSpec documents in various ways.
-- [respec-preview](https://github.com/sidvishnoi/respec-preview): Preview documents using a specific ReSpec version
+(Aspirational) components:
+
+- specs - collaboratively design ecosystem to facilitate inferencing of genetic and exognenous factors for cell function.
+- libraries - tools to interface with ML platforms, GWAS software, etc.
+- publications - collection of acquired knowledge with sufficient metadata to enable search and truth/hypothesis maintenance, e.g. reference genome. Publications may span different stores, such as the EBMI VCF files.
+- distribution - infrastructure to knit publications together.
+- executables - tools to:
+  - manage publications - push to appropriate databases
+  - migrate VCFs between reference genomes - lean on 
+  - raw data? illumina/affymetrix formats?
+  
+  
+## Implementation language
+
+1. Rust - provides simplest language bindings to e.g. Python, Java, Ecmascript, etc.
+2. Typescript - WebApp tools reduce impedance a lot.
+3. Python - trendy.

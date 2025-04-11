@@ -1,13 +1,9 @@
 <!DOCTYPE html>
-<!--
-  The source for this document is at:
-  https://github.com/speced/respec-web-services/blob/main/static/docs/src.html
--->
 <html>
   <head>
     <meta charset="utf-8" />
     <meta name="color-scheme" content="light dark">
-    <title>ReSpec Documentation</title>
+    <title>GeneFunction Use Cases and Requirements</title>
     <script
       src="https://www.w3.org/Tools/respec/respec-w3c"
       class="remove"
@@ -19,15 +15,28 @@
         edDraftURI: null,
         editors: [
           {
-            name: "ReSpec",
-            url: "https://github.com/speced/respec",
+            name: "Eric Prud'hommeaux",
+            url: "https://uu3.org/People/Eric",
           },
         ],
         lint: {
           "no-http-props": false,
           "check-punctuation": true,
         },
-        preProcess: [addSectionIds, fixIncludes],
+        highlighters: [
+          {
+            lang: "solidity",
+            propName: "hljsDefineSolidity",
+            langURL: "https://rawgit.com/pospi/highlightjs-solidity/master/solidity.js",
+          },
+          {
+            lang: "cypher",
+            propName: "hljsDefineCypher",
+            langURL: "cypher-tweaked.min.js",
+          },
+        ],
+
+        preProcess: [loadHighlighters, addSectionIds, fixIncludes],
         postProcess: [
           fixLinks,
           addWikiLinks,
@@ -46,23 +55,72 @@
             url: "https://astera.org/",
           },
         ],
-        github: "speced/respec",
+        github: "GeneFunction/specs",
         otherLinks: [
           {
             key: "Edit this documentation",
             data: [
               {
-                value: "GitHub Wiki",
-                href: "https://github.com/speced/respec/wiki",
-              },
-              {
                 value: "Single Page",
-                href: "https://github.com/speced/respec-web-services/blob/main/static/docs/src.html",
+                href: "https://github.com/GeneFunction/specs/ucr/src.html",
               },
             ],
           },
         ],
+        localBiblio: {
+          FileAPI: {
+            authors: [
+              "Arun Ranganathan",
+              "Jonas Sicking"
+            ],
+            date: "12 September 2013",
+            deliveredBy: [
+              {
+                shortname: "webapps",
+                url: "http://www.w3.org/2008/webapps/",
+              }
+            ],
+            edDraft: "http://dev.w3.org/2006/webapi/FileAPI/",
+            href: "http://www.w3.org/TR/FileAPI/",
+            id: "FileAPI",
+            publisher: "W3C",
+            status: "LCWD",
+            title: "File API",
+          },
+          rfc2119: {
+            authors: [
+              "S. Bradner"
+            ],
+            date: "March 1997",
+            href: "http://www.ietf.org/rfc/rfc2119.txt",
+            id: "rfc2119",
+            publisher: "IETF",
+            status: "Best Current Practice",
+            title: "Key words for use in RFCs to Indicate Requirement Levels",
+          }
+        },
       };
+
+      async function loadHighlighters(config, document, {showWarning, showError}) {
+        const worker = await new Promise(resolve => {
+          require(["core/worker"], ({ worker }) => resolve(worker));
+        });
+
+        return Promise.all(config.highlighters.map(({lang, propName, langURL}) => {
+          const action = "highlight-load-lang";
+          langURL = new URL(langURL, document.URL).href; // resolve relative to document
+          worker.postMessage({action, langURL, propName, lang});
+          return new Promise((resolve, reject) => {
+            worker.addEventListener("message", function listener({data}) {
+              const {action: responseAction, lang: responseLang} = data;
+              if (responseAction === action && responseLang === lang) {
+                worker.removeEventListener("message", listener);
+                resolve();
+              }
+            });
+          });
+        }));
+      }
 
       function addSectionIds() {
         const sections = document.querySelectorAll(
@@ -166,7 +224,7 @@
             a.href = `#${id}`;
           } else {
             // TODO: update URL on migration to speced org
-            a.href = `https://github.com/speced/respec/wiki/${href}`;
+            a.href = `https://github.com/GeneFunction/specs`;
           }
         }
       }
@@ -175,7 +233,7 @@
         const createWikiLink = includeName => {
           const wikiLink = document.createElement("a");
           // TODO: update URL on migration to speced org
-          wikiLink.href = `https://github.com/speced/respec/wiki/${includeName}/_edit`;
+          wikiLink.href = `https://github.com/GeneFunction/specs/wiki/${includeName}/_edit`;
           const title = "Edit this section on Wiki";
           wikiLink.title = title;
           wikiLink.setAttribute("aria-label", title);
@@ -212,61 +270,46 @@
   <body>
     <section id="abstract">
       <p>
-        ReSpec makes it easier to write technical documents. It was originally
-        designed for writing W3C specifications, but now supports many output
-        formats.
+        The GeneFunction libraries <em class="todo">will</em> provide cross-platform functionality for support of machine-learning association studies with the goal of making research of gene function as easy as possible.
+        This document captures provides a collaborative way to identify the ways the GeneFunction libraries may be used and the consequential architectural, API and programming requirements. 
       </p>
     </section>
-    <section data-max-toc="3" data-include-name="ReSpec-Editor's-Guide">
-      <h2>Getting Started</h2>
+    <section data-max-toc="3" data-include-name="document-conventions">
+      <h2>Document Conventions</h2>
       <section
-        data-include="md/ReSpec-Editor's-Guide"
+        data-include="md/document-conventions"
         data-include-replace="true"
       ></section>
-      <section data-max-toc="1" data-include="md/WebIDL-Guide"></section>
+      <section data-max-toc="1" data-include="md/status-conventions"></section>
     </section>
-    <section data-max-toc="2" data-include="md/static-snapshots"></section>
+    <section data-max-toc="2" data-include="md/operating-environment"></section>
     <section>
-      <h2>Configuration Options</h2>
+      <h2>Use Cases</h2>
       <section data-include="md/addSectionLinks"></section>
       <section data-include-name="lint" data-max-toc="2">
         <section data-include="md/lint" data-include-replace="true"></section>
       </section>
-      <section data-include="md/localBiblio"></section>
-    </section>
-    <section>
-      <h2>Deprecated Options</h2>
-      <section data-include="md/addPatentNote"></section>
     </section>
     <section class="appendix" data-include="md/Ecosystem"></section>
-   <section>
+    <section>
       <h2>Editing this document</h2>
       <p>
-        This document is generated directly from the content of the
-        <a href="https://github.com/speced/respec/wiki">ReSpec project wiki</a> on
-        GitHub. Thus, it can be edited in two ways:
+        This document is generated directly from the content of the <a href="https://github.com/GeneFunction/specs">GeneFunction specifications project</a> on GitHub.
+        Thus, it can be edited in two ways:
       </p>
-      <ol>
-        <li>
-          The
-          <a
-            href="https://github.com/speced/respec-web-services/edit/main/static/docs/src.html"
-            >src.html</a
-          >
-          for this document provides the structure. The `src.html` is available
-          in the
-          <a href="https://github.com/speced/respec-web-services"
-            >respec-web-services repository</a
-          >.
-        </li>
-        <li>
-          The
-          <a href="https://github.com/speced/respec/wiki">ReSpec project wiki</a>.
-          In addition, hovering over a section heading provides a link to
-          directly edit the relevant page in the wiki.
-        </li>
-      </ol>
+      <dl>
+        <dt>GitHub Pull Request</dt>
+        <dd>
+          Submit <a href="https://github.com/GeneFunction/specs/pulls">PRs</a> on the <a href="https://github.com/GeneFunction/specs/blob/main/ucr/src.html">src.html</a> for this document.
+        </dd>
+        <dt>GitHub Issue</dt>
+        <dd>
+          Raise GitHub issues on the <a href="https://github.com/GeneFunction/specs/issues">GeneFunction specs issues</a>.
+        </dd>
+      </dl>
     </section>
-    <section id="conformance" class="removeOnSave"></section>
+   <!-- todo: re-add once there is something to which one can conform
+       <section id="conformance" class="removeOnSave"></section>
+       -->
   </body>
 </html>
