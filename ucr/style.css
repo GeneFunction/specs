@@ -59,3 +59,7 @@ kbd {
   border-radius: 0.3em;
   box-shadow: inset 0 -1px 0 #d1d5da;
 }
+
+.todo {
+  color: #9c005a;
+}

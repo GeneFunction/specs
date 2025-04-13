@@ -1,3 +1,7 @@
+<aside class="todo">
+This section is just a place-holder with some examples to show how to use Markdown to edit this spec.
+</aside>
+
 document conventions:
 
 ```js "example": "js."
