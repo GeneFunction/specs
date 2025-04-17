@@ -1,10 +1,12 @@
-<aside class="todo">
-This section is just a place-holder with some examples to show how to use Markdown to edit this spec.
-</aside>
 
-document conventions:
+## Examples
 
-```js "example": "js."
+This document includes working examples to steepen the reader's learning curve.
+
+### syntax highlighting {#synhi}
+
+Examples include code examples like:
+```js "example": "json"
 { "asdf": true }
 ```
 
@@ -23,17 +25,10 @@ MATCH (keanu:Person {name:'Keanu Reeves'})
 RETURN keanu.name AS name, keanu.born AS born
 ```
 
-## my h2 {#overrideId}
-
-Text with `<element>`s...
-
-### nested h3
-
-The [`<backref>`](overrideId) ....
-
 image ref:
 
 ![Screenshot of subtitle](https://user-images.githubusercontent.com/870154/108663267-444b7380-7524-11eb-95b4-e94911c907c0.png)
 
-Some <cite>[citation](https://lists.w3.org/Archives/Member/chairs/1999JanMar/0056)</cite>).
+Built-in citation [[HTML]], [[SAMtools-2019]].
+Some <cite>[citation](https://lists.w3.org/Archives/Member/chairs/1999JanMar/0056)</cite>.
 

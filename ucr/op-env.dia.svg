@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created by diasvg.py -->
+<svg width="16.100cm" height="30.090cm" viewBox="6.000 0.900 16.100 30.090"
+ xmlns="http://www.w3.org/2000/svg"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+<!-- Layer: Background -->
+<g id="Background">
+<!-- Standard - Box -->
+<rect x="9.000" y="9.000" width="5.000" height="4.000" fill="#FFFFFF" stroke="#000000" stroke-width="0.100"  rx="0.000" />
+<!-- Flowchart - Terminal -->
+<path stroke="#000000" fill="#FFFFFF" stroke-width="0.100"  d="M 9.500,1.000 L 19.500,1.000 C 20.881,1.000 22.000,2.119 22.000,3.500 C 22.000,4.881 20.881,6.000 19.500,6.000 L 9.500,6.000 C 8.119,6.000 7.000,4.881 7.000,3.500 C 7.000,2.119 8.119,1.000 9.500,1.000 z"/>
+<!-- Flowchart - Terminal -->
+<path stroke="#000000" fill="#FFFFFF" stroke-width="0.100"  d="M 10.833,3.000 L 14.167,3.000 C 14.627,3.000 15.000,3.246 15.000,3.550 C 15.000,3.854 14.627,4.100 14.167,4.100 L 10.833,4.100 C 10.373,4.100 10.000,3.854 10.000,3.550 C 10.000,3.246 10.373,3.000 10.833,3.000 z"/>
+<!-- Standard - Text -->
+<!-- Standard - Box -->
+<rect x="15.010" y="9.010" width="2.990" height="4.000" fill="#FFFFFF" stroke="#000000" stroke-width="0.100"  rx="0.000" />
+<!-- Standard - Text -->
+<!-- Standard - Text -->
+<!-- Standard - Box -->
+<rect x="19.000" y="9.000" width="2.000" height="4.000" fill="#FFFFFF" stroke="#000000" stroke-width="0.100"  rx="0.000" />
+<!-- Standard - Text -->
+<!-- Standard - Line -->
+<line x1="12.000" y1="4.000" x2="10.083" y2="8.792" stroke="#000000" stroke-width="0.100" />
+<polyline fill="none" stroke="#000000" stroke-width="0.100"  points="9.995,8.339 10.042,8.896 10.459,8.525 "/>
+<!-- Standard - Line -->
+<line x1="17.480" y1="4.025" x2="15.563" y2="8.817" stroke="#000000" stroke-width="0.100" />
+<polyline fill="none" stroke="#000000" stroke-width="0.100"  points="15.475,8.364 15.521,8.921 15.939,8.550 "/>
+<!-- Standard - Line -->
+<line x1="21.980" y1="4.025" x2="20.063" y2="8.817" stroke="#000000" stroke-width="0.100" />
+<polyline fill="none" stroke="#000000" stroke-width="0.100"  points="19.975,8.364 20.021,8.921 20.439,8.550 "/>
+<!-- Standard - Line -->
+<line x1="11.980" y1="13.025" x2="10.063" y2="17.817" stroke="#000000" stroke-width="0.100" />
+<polyline fill="none" stroke="#000000" stroke-width="0.100"  points="9.975,17.364 10.021,17.921 10.439,17.550 "/>
+<!-- Standard - Text -->
+<!-- Standard - Line -->
+<line x1="17.480" y1="13.025" x2="15.563" y2="17.817" stroke="#000000" stroke-width="0.100" />
+<polyline fill="none" stroke="#000000" stroke-width="0.100"  points="15.475,17.364 15.521,17.921 15.939,17.550 "/>
+<!-- Standard - Text -->
+<!-- Standard - Line -->
+<line x1="11.980" y1="22.025" x2="10.063" y2="26.817" stroke="#000000" stroke-width="0.100" />
+<polyline fill="none" stroke="#000000" stroke-width="0.100"  points="9.975,26.364 10.021,26.921 10.439,26.550 "/>
+<!-- Standard - Text -->
+<!-- Standard - Text -->
+<!-- Standard - Text -->
+<!-- Standard - Text -->
+<!-- Standard - Text -->
+</g>
+</svg>

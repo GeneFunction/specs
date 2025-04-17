@@ -1,0 +1,304 @@
+{
+  "localBiblio": {
+    "Li-Handsaker-Wysoker-2009": {
+      "authors": [
+        "H Li",
+        "B Handsaker",
+        "A Wysoker"
+      ],
+      "date": "2009",
+      "href": "https://scholar.google.com/scholar_lookup?title=The%20Sequence%20Alignment%2FMap%20format%20and%20SAMtools&author=H%20Li&author=B%20Handsaker&author=A%20Wysoker&publication_year=2009&journal=Bioinformatics&volume=25&pages=2078-9",
+      "id": "Li-Handsaker-Wysoker-2009",
+      "publisher": "Bioinformatics",
+      "title": "The Sequence Alignment/Map format and SAMtools"
+    },
+    "Danecek-Auton-Abecasis-2011": {
+      "authors": [
+        "P Danecek",
+        "A Auton",
+        "G Abecasis"
+      ],
+      "date": "2011",
+      "href": "https://scholar.google.com/scholar_lookup?title=The%20variant%20call%20format%20and%20VCFtools&author=P%20Danecek&author=A%20Auton&author=G%20Abecasis&publication_year=2011&journal=Bioinformatics&volume=27&pages=2156-8",
+      "id": "Danecek-Auton-Abecasis-2011",
+      "publisher": "Bioinformatics",
+      "title": "The variant call format and VCFtools"
+    },
+    "The-1000-Genomes-Project-Consortium-2015": {
+      "authors": [
+        "The 1000 Genomes Project Consortium"
+      ],
+      "date": "2015",
+      "id": "The-1000-Genomes-Project-Consortium-2015",
+      "publisher": "The 1000 Genomes Project Consortium",
+      "title": "A global reference for human genetic variation"
+    },
+    "Tarasov-Vilella-Cuppen-2015": {
+      "authors": [
+        "A Tarasov",
+        "AJ Vilella",
+        "E Cuppen"
+      ],
+      "date": "2015",
+      "href": "https://scholar.google.com/scholar_lookup?title=Sambamba%3A%20fast%20processing%20of%20NGS%20alignment%20formats&author=A%20Tarasov&author=AJ%20Vilella&author=E%20Cuppen&publication_year=2015&journal=Bioinformatics&volume=31&pages=2032-4",
+      "id": "Tarasov-Vilella-Cuppen-2015",
+      "publisher": "Bioinformatics",
+      "title": "Sambamba: fast processing of NGS alignment formats"
+    },
+    "Tischler-Leonard-2014": {
+      "authors": [
+        "G Tischler",
+        "S Leonard"
+      ],
+      "date": "2014",
+      "href": "https://scholar.google.com/scholar_lookup?title=biobambam%3A%20tools%20for%20read%20pair%20collation%20based%20algorithms%20on%20BAM%20files&author=G%20Tischler&author=S%20Leonard&publication_year=2014&journal=Source%20Code%20Biol%20Med&volume=9&pages=2078",
+      "id": "Tischler-Leonard-2014",
+      "publisher": "Source Code Biol Med",
+      "title": "biobambam: tools for read pair collation based algorithms on BAM files"
+    },
+    "Babraham-Bioinformatics-2019": {
+      "authors": [
+        "Babraham Bioinformatics"
+      ],
+      "date": "2019",
+      "id": "Babraham-Bioinformatics-2019",
+      "publisher": "Babraham Bioinformatics",
+      "title": "FastQC: A quality control tool for high throughput sequence data"
+    },
+    "DePristo-Banks-Poplin-2011": {
+      "authors": [
+        "MA DePristo",
+        "E Banks",
+        "R Poplin"
+      ],
+      "date": "2011",
+      "href": "https://scholar.google.com/scholar_lookup?title=A%20framework%20for%20variation%20discovery%20and%20genotyping%20using%20next-generation%20DNA%20sequencing%20data&author=MA%20DePristo&author=E%20Banks&author=R%20Poplin&publication_year=2011&journal=Nat%20Genet&volume=43&pages=491-8",
+      "id": "DePristo-Banks-Poplin-2011",
+      "publisher": "Nat Genet",
+      "title": "A framework for variation discovery and genotyping using next-generation DNA sequencing data"
+    },
+    "Bonfield-Marshall-Danecek-2021": {
+      "authors": [
+        "JK Bonfield",
+        "J Marshall",
+        "P Danecek"
+      ],
+      "date": "2021",
+      "href": "https://scholar.google.com/scholar_lookup?title=HTSlib%20-%20C%20library%20for%20reading%2Fwriting%20high-throughput%20sequencing%20data&author=JK%20Bonfield&author=J%20Marshall&author=P%20Danecek&publication_year=2021&journal=Gigascience&volume=&pages=",
+      "id": "Bonfield-Marshall-Danecek-2021",
+      "publisher": "Gigascience",
+      "title": "HTSlib - C library for reading/writing high-throughput sequencing data"
+    },
+    "SAMtools-2020": {
+      "authors": [
+        "SAMtools"
+      ],
+      "date": "2020",
+      "id": "SAMtools-2020",
+      "publisher": "SAMtools",
+      "title": "SAMtools"
+    },
+    "SAMtools---Documentation-": {
+      "authors": [
+        null
+      ],
+      "id": "SAMtools---Documentation-",
+      "status": "@@status@@"
+    },
+    "Hsi-Yang Fritz-Leinonen-Cochrane-2011": {
+      "authors": [
+        "M Hsi-Yang Fritz",
+        "R Leinonen",
+        "G Cochrane"
+      ],
+      "date": "2011",
+      "href": "https://scholar.google.com/scholar_lookup?title=Efficient%20storage%20of%20high%20throughput%20DNA%20sequencing%20data%20using%20reference-based%20compression&author=M%20Hsi-Yang%C2%A0Fritz&author=R%20Leinonen&author=G%20Cochrane&publication_year=2011&journal=Genome%20Res&volume=21&pages=734-40",
+      "id": "Hsi-Yang Fritz-Leinonen-Cochrane-2011",
+      "publisher": "Genome Res",
+      "title": "Efficient storage of high throughput DNA sequencing data using reference-based compression"
+    },
+    "SAMtools---Workflow-": {
+      "authors": [
+        null
+      ],
+      "id": "SAMtools---Workflow-",
+      "status": "@@status@@"
+    },
+    "Li-2011": {
+      "authors": [
+        "H Li"
+      ],
+      "date": "2011",
+      "href": "https://scholar.google.com/scholar_lookup?title=A%20statistical%20framework%20for%20SNP%20calling%2C%20mutation%20discovery%2C%20association%20mapping%20and%20population%20genetical%20parameter%20estimation%20from%20sequencing%20data&author=H%20Li&publication_year=2011&journal=Bioinformatics&volume=27&pages=2987-93",
+      "id": "Li-2011",
+      "publisher": "Bioinformatics",
+      "title": "A statistical framework for SNP calling, mutation discovery, association mapping and population genetical parameter estimation from sequencing data"
+    },
+    "gvcftools-2020": {
+      "authors": [
+        null
+      ],
+      "date": "2020",
+      "id": "gvcftools-2020",
+      "status": "@@status@@"
+    },
+    "Schilbert-Rempel-Pucker-2020": {
+      "authors": [
+        "HM Schilbert",
+        "A Rempel",
+        "B Pucker"
+      ],
+      "date": "2020",
+      "href": "https://scholar.google.com/scholar_lookup?title=Comparison%20of%20read%20mapping%20and%20variant%20calling%20tools%20for%20the%20analysis%20of%20plant%20NGS%20data&author=HM%20Schilbert&author=A%20Rempel&author=B%20Pucker&publication_year=2020&journal=Plants%20%28Basel%29&volume=9&pages=439",
+      "id": "Schilbert-Rempel-Pucker-2020",
+      "publisher": "Plants (Basel)",
+      "title": "Comparison of read mapping and variant calling tools for the analysis of plant NGS data"
+    },
+    "Pightling-Petronella-Pagotto-2015": {
+      "authors": [
+        "AW Pightling",
+        "N Petronella",
+        "F Pagotto"
+      ],
+      "date": "2015",
+      "href": "https://scholar.google.com/scholar_lookup?title=Choice%20of%20reference-guided%20sequence%20assembler%20and%20SNP%20caller%20for%20analysis%20of%20Listeria%20monocytogenes%20short-read%20sequence%20data%20greatly%20influences%20rates%20of%20error&author=AW%20Pightling&author=N%20Petronella&author=F%20Pagotto&publication_year=2015&journal=BMC%20Res%20Notes&volume=8&pages=748",
+      "id": "Pightling-Petronella-Pagotto-2015",
+      "publisher": "BMC Res Notes",
+      "title": "Choice of reference-guided sequence assembler and SNP caller for analysis of Listeria monocytogenes short-read sequence data greatly influences rates of error"
+    },
+    "Bonfield-McCarthy-Durbin-2019": {
+      "authors": [
+        "JK Bonfield",
+        "SA McCarthy",
+        "R Durbin"
+      ],
+      "date": "2019",
+      "href": "https://scholar.google.com/scholar_lookup?title=Crumble%3A%20reference%20free%20lossy%20compression%20of%20sequence%20quality%20values&author=JK%20Bonfield&author=SA%20McCarthy&author=R%20Durbin&publication_year=2019&journal=Bioinformatics&volume=35&pages=337-9",
+      "id": "Bonfield-McCarthy-Durbin-2019",
+      "publisher": "Bioinformatics",
+      "title": "Crumble: reference free lossy compression of sequence quality values"
+    },
+    "Liu-Zhang-Zhang-2019": {
+      "authors": [
+        "F Liu",
+        "Y Zhang",
+        "L Zhang"
+      ],
+      "date": "2019",
+      "href": "https://scholar.google.com/scholar_lookup?title=Systematic%20comparative%20analysis%20of%20single-nucleotide%20variant%20detection%20methods%20from%20single-cell%20RNA%20sequencing%20data&author=F%20Liu&author=Y%20Zhang&author=L%20Zhang&publication_year=2019&journal=Genome%20Biol&volume=20&pages=242",
+      "id": "Liu-Zhang-Zhang-2019",
+      "publisher": "Genome Biol",
+      "title": "Systematic comparative analysis of single-nucleotide variant detection methods from single-cell RNA sequencing data"
+    },
+    "Narasimhan-Danecek-Scally-2016": {
+      "authors": [
+        "V Narasimhan",
+        "P Danecek",
+        "A Scally"
+      ],
+      "date": "2016",
+      "href": "https://scholar.google.com/scholar_lookup?title=BCFtools%2FRoH%3A%20a%20hidden%20Markov%20model%20approach%20for%20detecting%20autozygosity%20from%20next-generation%20sequencing%20data&author=V%20Narasimhan&author=P%20Danecek&author=A%20Scally&publication_year=2016&journal=Bioinformatics&volume=32&pages=1749-51",
+      "id": "Narasimhan-Danecek-Scally-2016",
+      "publisher": "Bioinformatics",
+      "title": "BCFtools/RoH: a hidden Markov model approach for detecting autozygosity from next-generation sequencing data"
+    },
+    "Danecek-McCarthy-HipSci-Durbin-2016": {
+      "authors": [
+        "P Danecek",
+        "SA McCarthy",
+        "Consortium HipSci",
+        "R Durbin"
+      ],
+      "date": "2016",
+      "href": "https://scholar.google.com/scholar_lookup?title=A%20method%20for%20checking%20genomic%20integrity%20in%20cultured%20cell%20lines%20from%20SNP%20genotyping%20data&author=P%20Danecek&author=SA%20McCarthy&author=Consortium%20HipSci&author=R%20Durbin&publication_year=2016&journal=PLoS%20One&volume=11&pages=e0155014",
+      "id": "Danecek-McCarthy-HipSci-Durbin-2016",
+      "publisher": "PLoS One",
+      "title": "A method for checking genomic integrity in cultured cell lines from SNP genotyping data"
+    },
+    "McLaren-Gil-Hunt-2016": {
+      "authors": [
+        "W McLaren",
+        "L Gil",
+        "SE Hunt"
+      ],
+      "date": "2016",
+      "href": "https://scholar.google.com/scholar_lookup?title=The%20Ensembl%20Variant%20Effect%20Predictor&author=W%20McLaren&author=L%20Gil&author=SE%20Hunt&publication_year=2016&journal=Genome%20Biol&volume=17&pages=122",
+      "id": "McLaren-Gil-Hunt-2016",
+      "publisher": "Genome Biol",
+      "title": "The Ensembl Variant Effect Predictor"
+    },
+    "BCFtools-https://samtools.github.io/bcftools/.-Accessed-9-February-2021-": {
+      "authors": [
+        null
+      ],
+      "id": "BCFtools-https://samtools.github.io/bcftools/.-Accessed-9-February-2021-",
+      "status": "@@status@@"
+    },
+    "Grüning-The Bioconda-Dale-Sjödin-2018": {
+      "authors": [
+        "B Grüning",
+        "Team The Bioconda",
+        "R Dale",
+        "A Sjödin"
+      ],
+      "date": "2018",
+      "href": "https://scholar.google.com/scholar_lookup?title=Bioconda%3A%20sustainable%20and%20comprehensive%20software%20distribution%20for%20the%20life%20sciences&author=B%20Gr%C3%BCning&author=Team%20The%C2%A0Bioconda&author=R%20Dale&author=A%20Sj%C3%B6din&publication_year=2018&journal=Nat%20Methods&volume=&pages=475-6",
+      "id": "Grüning-The Bioconda-Dale-Sjödin-2018",
+      "publisher": "Nat Methods",
+      "title": "Bioconda: sustainable and comprehensive software distribution for the life sciences"
+    },
+    "Danecek-McCarthy-2017": {
+      "authors": [
+        "P Danecek",
+        "SA McCarthy"
+      ],
+      "date": "2017",
+      "href": "https://scholar.google.com/scholar_lookup?title=BCFtools%2Fcsq%3A%20haplotype-aware%20variant%20consequences&author=P%20Danecek&author=SA%20McCarthy&publication_year=2017&journal=Bioinformatics&volume=33&pages=2037-9",
+      "id": "Danecek-McCarthy-2017",
+      "publisher": "Bioinformatics",
+      "title": "BCFtools/csq: haplotype-aware variant consequences"
+    },
+    "Nethercote-Seward-2007": {
+      "authors": [
+        "N Nethercote",
+        "J Seward"
+      ],
+      "date": "2007",
+      "href": "https://scholar.google.com/scholar_lookup?title=Valgrind%3A%20a%20framework%20for%20heavyweight%20dynamic%20binary%20instrumentation&author=N%20Nethercote&author=J%20Seward&publication_year=2007&journal=SIGPLAN%20Not&volume=42&pages=89-100",
+      "id": "Nethercote-Seward-2007",
+      "publisher": "SIGPLAN Not",
+      "title": "Valgrind: a framework for heavyweight dynamic binary instrumentation"
+    },
+    "Serebryany-Bruening-Potapenko-2012": {
+      "authors": [
+        "K Serebryany",
+        "D Bruening",
+        "A Potapenko"
+      ],
+      "date": "2012",
+      "href": "javascript:;",
+      "id": "Serebryany-Bruening-Potapenko-2012",
+      "title": "AddressSanitizer: a fast address sanity checker"
+    },
+    "SAMtools-2019": {
+      "authors": [
+        "SAMtools"
+      ],
+      "date": "2019",
+      "id": "SAMtools-2019",
+      "publisher": "SAMtools",
+      "title": "SAMtools"
+    },
+    "Danecek-Bonfield-Liddle-2021": {
+      "authors": [
+        "P Danecek",
+        "JK Bonfield",
+        "J Liddle"
+      ],
+      "date": "2021",
+      "id": "Danecek-Bonfield-Liddle-2021",
+      "publisher": "GigaScience Database",
+      "title": "GigaScience Database"
+    }
+  }
+}

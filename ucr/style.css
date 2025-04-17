@@ -63,3 +63,38 @@ kbd {
 .todo {
   color: #9c005a;
 }
+
+#div-referrer-menu {
+    position:absolute;
+    display:none;
+    border:solid 1px #CCC;
+    background: #FEF;
+    opacity: .8;
+
+    h3 {
+        margin: .2em;
+    }
+    ul {
+        display: inline-flex;
+        list-style:none;
+        margin:0; padding:0;
+        background:white;
+    }
+    li {
+        border-bottom:solid 1px #CCC;
+        background:#ECE;
+    }
+    li:last-child {
+        border:none;
+    }
+    li a {
+        display:block;
+        padding:5px 10px; 
+        text-decoration:none;
+        color:blue;
+    }
+    li a:hover {
+        background:blue;
+        color:#FFF;
+    }
+}

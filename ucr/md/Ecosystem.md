@@ -17,3 +17,5 @@
 1. Rust - provides simplest language bindings to e.g. Python, Java, Ecmascript, etc.
 2. Typescript - WebApp tools reduce impedance a lot.
 3. Python - trendy.
+
+Don't forget [[SAMtools-2019]].

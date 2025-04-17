@@ -1,5 +1,7 @@
 # Quick Start
 
+See also [[Li-Handsaker-Wysoker-2009]].
+
 Following is a sequence of operations to familiarize the reader with the tooling necessary to manipulate genetic data files and set them up for trivial machine-learning.
 
 <aside class="todo">
