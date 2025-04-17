@@ -36,11 +36,10 @@
           },
         ],
 
-        preProcess: [loadHighlighters, addSectionIds, /*fixIncludes*/],
+        preProcess: [
+          loadHighlighters
+        ],
         postProcess: [
-          // fixLinks,
-          // addWikiLinks,
-          fixMarkupPostprocess,
           postProcessEnhance,
           cleanup,
           addBackLinks,
@@ -421,26 +420,27 @@
       };
 
       class ReferrerMenu {
-        constructor (referrees, menuElement, getInitialEntries, getListEntries) {
-          this.menuElement = menuElement;
+        constructor (referrees, getMenuElement, getInitialEntries, getListEntries) {
+          this.getMenuElement = getMenuElement;
+          this.menuElement = null;
           
           for (const ref of referrees)
             ref.oncontextmenu = e => this.paint(e, ref, getInitialEntries, getListEntries);
         }
         
         hideContextMenu (e) {
-          this.menuElement.style.display = 'none';
+          this.menuElement.remove();
+          this.menuElement = null;
         }
         
         async paint (e, elmnt, getInitialEntries, getListEntries) {
+          if (this.menuElement)
+            return;
           e.preventDefault();
-          
+          this.menuElement = this.getMenuElement(elmnt).firstElementChild;
           const ul = this.menuElement.querySelector('ul');
           ul.replaceChildren(...getInitialEntries(elmnt));
-          const eltBox = elmnt.getBoundingClientRect();
-          this.menuElement.style.left = e.pageX + 50 /*(eltBox.x + eltBox.width + window.scrollX)*/ + 'px'
-          this.menuElement.style.top = (eltBox.y + window.scrollY - 10) + 'px'
-          this.menuElement.style.display = 'inline-flex'
+          elmnt.append(this.menuElement);
           
           // close the right click context menu on a click anywhere
           document.addEventListener("click", e => this.hideContextMenu(e), {once: true});
@@ -469,132 +469,9 @@
         }));
       }
 
-      function addSectionIds() {
-        const sections = document.querySelectorAll(
-          "section[data-include]:not([id])",
-        );
-        for (const section of sections) {
-          section.id = section.dataset.include;
-        }
-      }
-
-      function fixIncludes() {
-        for (const section of document.querySelectorAll(
-          "section[data-include]",
-        )) {
-          const { include } = section.dataset;
-          Object.assign(section.dataset, {
-            includeName: include,
-            includeFormat: "markdown",
-            // oninclude: "fixMarkupOnInclude",
-            // TODO: update URL on migration to speced org
-            include: `${include}.md`,
-          });
-          if (!section.hasAttribute("data-max-toc")) {
-            section.dataset.maxToc = section.querySelector("section")
-              ? "2"
-              : "1";
-          }
-        }
-      }
-
-      /**
-       * @param {*} _
-       * @param {string} content
-       */
-      function fixMarkupOnInclude(_, content) {
-        const ZERO_WIDTH_SPACE = "&#8203;";
-        // Escape [[[foo]]] and [[foo]] by adding zero-width space. We remove these
-        // extraneous characters in postProcess, so users don't end up copy pasting
-        // them. Ugly, but  other way is upstream changes for an extreme edge case.
-        content = content
-          .replace(/\[\[/g, `[${ZERO_WIDTH_SPACE}[${ZERO_WIDTH_SPACE}`)
-          // Similarly for [= term =], {{ term }}, [^elem^]
-          .replace(/\[=/g, `[${ZERO_WIDTH_SPACE}=`)
-          .replace(/{{/g, `{${ZERO_WIDTH_SPACE}{`)
-          .replace(/\[\^/g, `[${ZERO_WIDTH_SPACE}^`)
-          // and also escape | used for inline variables
-          .replace(/\`\\\|(\w+)/g, `\`\\|${ZERO_WIDTH_SPACE}$1`)
-          .replace(/(\w+)\\\|\`/g, `$1${ZERO_WIDTH_SPACE}\\|\``)
-          .replace(/\`\|(\w+)/g, `\`\\|${ZERO_WIDTH_SPACE}$1`)
-          .replace(/(\w+)\|\`/g, `$1${ZERO_WIDTH_SPACE}\\|\``);
-
-        // Add .note and .advisement classes based on line prefix
-        content = content
-          .split("\n")
-          .map(line => {
-            if (/^.{0,5}\s*Warning:/.test(line))
-              return `<div class="advisement">\n\n${line}</div>`;
-            if (/^.{0,5}\s*Note:/.test(line))
-              return `<div class="note">\n\n${line}</div>`;
-            return line;
-          })
-          .join("\n");
-
-        return content;
-      }
-
-      function fixMarkupPostprocess() {
-        for (const elem of document.querySelectorAll("code")) {
-          if (elem.innerHTML.includes("&amp;#8203;")) {
-            elem.innerHTML = elem.innerHTML.replace(/&amp;#8203;/g, "");
-          }
-          if (elem.innerHTML.includes("\\|")) {
-            elem.innerHTML = elem.innerHTML.replace(/\\\|/g, "|");
-          }
-        }
-      }
-
       function postProcessEnhance() {
         for (const elem of document.querySelectorAll("section dl, table")) {
           elem.classList.add("def");
-        }
-      }
-
-      function fixLinks() {
-        /** @type {NodeListOf<HTMLAnchorElement>} */
-        const anchors = document.querySelectorAll(
-          "section a:not([href^=http]):not([href^='mailto:']):not([href^='#'])",
-        );
-        for (const a of anchors) {
-          const href = a.hash ? a.hash.slice(1) : a.pathname.split("/").pop();
-          if (document.getElementById(href)) {
-            a.href = `#${href}`;
-          } else if (document.getElementById(`id-${href}`)) {
-            // Special section IDs like "conformance" trigger ReSpec's "include"
-            // behaviour. We manually add `id-` prefix to overcome that.
-            a.href = `#id-${href}`;
-          } else if (document.querySelector(`[data-include-name="${href}"]`)) {
-            const { id } = document.querySelector(
-              `[data-include-name="${href}"]`,
-            );
-            a.href = `#${id}`;
-          } else {
-            // TODO: update URL on migration to speced org
-            a.href = `https://github.com/GeneFunction/specs`;
-          }
-        }
-      }
-
-      function addWikiLinks() {
-        const createWikiLink = includeName => {
-          const wikiLink = document.createElement("a");
-          // TODO: update URL on migration to speced org
-          wikiLink.href = `https://github.com/GeneFunction/specs/wiki/${includeName}/_edit`;
-          const title = "Edit this section on Wiki";
-          wikiLink.title = title;
-          wikiLink.setAttribute("aria-label", title);
-          wikiLink.textContent = "📝 Edit";
-          wikiLink.classList.add("wiki-link");
-          return wikiLink;
-        };
-
-        for (const section of document.querySelectorAll("section")) {
-          const closest = section.closest("section[data-include-name]");
-          if (!closest) continue;
-          const { includeName } = closest.dataset;
-          const wikiLink = createWikiLink(includeName);
-          section.querySelector("h2, h3, h4, h5, h6").append(wikiLink);
         }
       }
 
@@ -609,14 +486,13 @@
           attributesToRemove.forEach(attr => el.removeAttribute(attr));
         });
 
-        // document.getElementById("respec-dfn-panel").remove(); // keep around to explore
+        document.getElementById("respec-dfn-panel").remove();
       }
 
       function addBackLinks(config, document, utils) {
-        debugger;
         new ReferrerMenu(
           document.querySelectorAll('#references dt[id]'),
-          document.getElementById('div-referrer-menu'),
+          (ref) => document.getElementById('div-referrer-menu').content.cloneNode(true),
           (ref) => [document.getElementById('li-loading-template').content.cloneNode(true)],
           (ref) => {
             return new Promise((resolve, reject) => {
@@ -658,11 +534,6 @@
         }
         return null;
       }
-
-      function myOnInclude_NUKE(undefined, rawData, url) {
-        console.log("included", url);
-        return rawData;
-      }
     </script>
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -673,7 +544,7 @@
         This document captures provides a collaborative way to identify the ways the GeneFunction libraries may be used and the consequential architectural, API and programming requirements. 
       </p>
     </section>
-    <section data-include="md/quick-start.md" data-include-format="markdown" <!-- data-oninclude="myOnInclude" -->></section>
+    <section data-include="md/quick-start.md" data-include-format="markdown"></section>
     <section data-max-toc="3" data-include-name="document-conventions">
       <h2>Document Conventions</h2>
       <section
@@ -714,17 +585,17 @@
         </dd>
       </dl>
     </section>
-    <!-- todo: re-add once there is something to which one can conform
-         <section id="conformance" class="removeOnSave"></section>
-         -->
+    <!-- todo: re-add once there is something to which one can conform <section id="conformance" class="removeOnSave"></section> -->
 
     <!-- referrers menu -->
-    <div id="div-referrer-menu" class="referrer-menu">
-      <h3>referrers:</h3>
-      <ul>
-        <li>Something went wrong; this list should have been replaced.</li>
-      </ul>
-    </div>
+    <template id="div-referrer-menu">
+      <div class="referrer-menu">
+        <h3>referrers:</h3>
+        <ul>
+          <li>Something went wrong; this list should have been replaced.</li>
+        </ul>
+      </div>
+    </template>  
     <template id="li-loading-template"><li>load...</li><li><button>cancel</button></li></template>
     <template id="li-referrer-template"><li><a></a></li></template>
   </body>

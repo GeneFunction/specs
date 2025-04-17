@@ -64,15 +64,16 @@ kbd {
   color: #9c005a;
 }
 
-#div-referrer-menu {
-    position:absolute;
-    display:none;
+.referrer-menu {
+    padding-left:1em;
+    display:inline-flex;
+    position:absolute; /* don't mote stuff around when painting menu */
     border:solid 1px #CCC;
     background: #FEF;
     opacity: .8;
 
     h3 {
-        margin: .2em;
+        margin: 0;
     }
     ul {
         display: inline-flex;
@@ -83,13 +84,12 @@ kbd {
     li {
         border-bottom:solid 1px #CCC;
         background:#ECE;
-    }
-    li:last-child {
-        border:none;
+        margin:0;
+        border-left:solid 2px #CCC;
     }
     li a {
         display:block;
-        padding:5px 10px; 
+        margin:0; padding:0 10px; 
         text-decoration:none;
         color:blue;
     }
