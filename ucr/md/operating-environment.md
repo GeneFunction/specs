@@ -3,7 +3,7 @@
 The GeneFunction infrastructure provides for the acquisition, distribution, discovery and analysis of biological data.
 Currently limited to procaryotes, aspects of the cell are anaylzed:
 
-<aside class="issue" data-number="1" title="eucaryotes?">Would eucaryotes introduce extra requirements by changing the distribution targets?
+<aside class="issue" data-number="1" title="eukaryotes?">Would eukaryotes introduce extra requirements by changing the distribution targets?
 </aside>
 
 * **genome** - the genes sequenced with e.g. [Sanger](https://en.wikipedia.org/wiki/Sanger_sequencing) or [NextGen Sequencing](https://en.wikipedia.org/wiki/DNA_sequencing#Next-generation_methods) and the resulting sequence, along with any reference genome, are stored and distributed to relevent databases.

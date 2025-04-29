@@ -67,9 +67,9 @@ kbd {
 .referrer-menu {
     padding-left:1em;
     display:inline-flex;
-    position:absolute; /* don't mote stuff around when painting menu */
+    position:absolute; /* don't move stuff around when painting menu */
     border:solid 1px #CCC;
-    background: #FEF;
+    background: #EFF;
     opacity: .8;
 
     h3 {
@@ -83,7 +83,7 @@ kbd {
     }
     li {
         border-bottom:solid 1px #CCC;
-        background:#ECE;
+        background:#CEE;
         margin:0;
         border-left:solid 2px #CCC;
     }
